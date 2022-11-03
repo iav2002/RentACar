@@ -73,20 +73,15 @@ public class Car implements CarInterface{
 
     @Override
     public boolean isAvailable(Month month, int day) {
-<<<<<<< HEAD
+
         return true;
-=======
-        
->>>>>>> 3e69c6db447c3f8f2b94b1bb7bd0b0957a3385f8
     }
 
     @Override
     public boolean book(Month month, int day) {
-<<<<<<< HEAD
+
         return true;
-=======
-        
->>>>>>> 3e69c6db447c3f8f2b94b1bb7bd0b0957a3385f8
+
     }
     
 }
