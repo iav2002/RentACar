@@ -4,6 +4,7 @@
  */
 package ooc.yoursolution;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import ooc.enums.Make;
@@ -18,16 +19,16 @@ public class Car implements CarInterface{
     private Make make;
     private double rate;
     private int id;
-    Map<Month, boolean[]> availability;
+    private Map<Month, boolean[]> availability;
     
 
     @Override
     public Map<Month, boolean[]> createAvailability() {
         
         this.availability = new HashMap<>();
-        this.availability = availability;
-        return availability;
         
+        return availability;
+         
     }
 
     @Override
@@ -72,12 +73,20 @@ public class Car implements CarInterface{
 
     @Override
     public boolean isAvailable(Month month, int day) {
+<<<<<<< HEAD
         return true;
+=======
+        
+>>>>>>> 3e69c6db447c3f8f2b94b1bb7bd0b0957a3385f8
     }
 
     @Override
     public boolean book(Month month, int day) {
+<<<<<<< HEAD
         return true;
+=======
+        
+>>>>>>> 3e69c6db447c3f8f2b94b1bb7bd0b0957a3385f8
     }
     
 }
