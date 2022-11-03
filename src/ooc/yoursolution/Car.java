@@ -16,14 +16,16 @@ import ooc.enums.Month;
 public class Car implements CarInterface{
     
     private Make make;
-    private double dailyRate;
+    private double rate;
     private int id;
+    Map<Month, boolean[]> availability;
     
 
     @Override
     public Map<Month, boolean[]> createAvailability() {
         
-        Map<Month, boolean[]> availability = new HashMap<>();
+        this.availability = new HashMap<>();
+        this.availability = availability;
         return availability;
         
     }
@@ -38,27 +40,29 @@ public class Car implements CarInterface{
     public void setMake(Make make) {
         
         this.make = make;
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public double getRate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return rate;
+  
     }
 
     @Override
     public void setRate(double rate) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.rate = rate;
+        
     }
 
     @Override
     public Map<Month, boolean[]> getAvailability() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return availability;
     }
 
     @Override
     public void setAvailability(Map<Month, boolean[]> availability) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.availability = availability;
     }
 
     @Override
