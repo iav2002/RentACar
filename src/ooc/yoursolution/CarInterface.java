@@ -19,7 +19,7 @@ public interface CarInterface {
      * of the car for the whole year. 
      * The calendar should be a Map that uses the Month as the key, 
      * and an array of boolean as its associated value.
-     * 
+     *  this.Make = make;
      * @return Map of availability
      */
     public Map<Month, boolean[]> createAvailability();
