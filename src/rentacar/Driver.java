@@ -15,6 +15,7 @@ import ooc.enums.Month;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import ooc.yoursolution.Car;
 
 // INCLUDE HERE THE LINK TO THE GIT REPOSITORY AS A COMMENT!!!!
 
@@ -52,7 +53,8 @@ public class Driver {
         System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
         System.out.println(rentACar.bookCar(Month.FEBRUARY, 3, Make.FIAT, 10));
         System.out.println(rentACar.bookCar(Month.MARCH, 10, Make.FORD, 12));
-      
+      Car mb = new Car();
+      mb.createAvailability();
     }
 
 }
