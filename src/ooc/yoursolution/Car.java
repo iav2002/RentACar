@@ -76,8 +76,9 @@ public class Car implements CarInterface{
 
     @Override
     public boolean isAvailable(Month month, int day) {
-
-        return true;
+        boolean[] monthAvailability = availability.get(month);
+        return monthAvailability[day];
+        
     }
 
     @Override
