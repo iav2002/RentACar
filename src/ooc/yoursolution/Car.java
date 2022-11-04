@@ -5,6 +5,7 @@
 package ooc.yoursolution;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import ooc.enums.Make;
@@ -23,11 +24,14 @@ public class Car implements CarInterface{
 
     @Override
     public Map<Month, boolean[]> createAvailability() {
-        
-        
-        availability = new HashMap<>();
-        availability.put(Month.MAY, new boolean[31]);
-        
+    
+        HashMap<Month, boolean[]> availability = new HashMap<>(); 
+    
+     for(Month month: Month.values()){
+     boolean[] monthAvailability = new boolean[month.getNumberOfDays()];
+     Arrays.fill(monthAvailability, true);
+     }
+     
         return availability;
          
     }
