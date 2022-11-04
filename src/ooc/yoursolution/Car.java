@@ -10,8 +10,7 @@ import java.util.Map;
 import ooc.enums.Make;
 import ooc.enums.Month;
 
-/**
- *
+/***
  * @author ignac
  */
 public class Car implements CarInterface{
@@ -25,7 +24,9 @@ public class Car implements CarInterface{
     @Override
     public Map<Month, boolean[]> createAvailability() {
         
-        this.availability = new HashMap<>();
+        
+        availability = new HashMap<>();
+        availability.put(Month.MAY, new boolean[31]);
         
         return availability;
          
@@ -58,6 +59,8 @@ public class Car implements CarInterface{
 
     @Override
     public Map<Month, boolean[]> getAvailability() {
+                
+        
         return availability;
     }
 
