@@ -20,8 +20,8 @@ import ooc.yoursolution.Car;
 // INCLUDE HERE THE LINK TO THE GIT REPOSITORY AS A COMMENT!!!!
 
 
-// INCLUDE HERE THE FULL NAME AND STUDENT NUMBER OF BOTH TEAM MEMBERS 
-// AS A COMMENT!!!!
+// Bernardo Gandara 2021283
+// Ignacio Alarcon 2021357
 
 public class Driver {
 
