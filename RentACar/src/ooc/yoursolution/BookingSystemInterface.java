@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 /**
- *
  * This is one of the interfaces you need to implement
- *
  */
 public interface BookingSystemInterface {
     

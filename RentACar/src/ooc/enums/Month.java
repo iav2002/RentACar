@@ -7,8 +7,6 @@ package ooc.enums;
 
 /**
  * THIS IS SOME LEGACY CODE THAT IS PART OF THE SYSTEM AND YOU HAVE TO USE IT.
- *
- * @author apont
  */
 public enum Month {
     JANUARY(31),

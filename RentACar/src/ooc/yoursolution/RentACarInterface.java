@@ -5,9 +5,7 @@ import ooc.enums.Month;
 import java.util.List;
 
 /**
- *
  * This is one of the interfaces you need to implement
- *
  */
 public interface RentACarInterface {
 
@@ -40,10 +38,10 @@ public interface RentACarInterface {
     public void setName(String name);
 
     /**
-     * Check through all cars in this hotel and see if there is continuous
+     * Check through all cars in this company and see if there is continuous
      * availability of any specific car. It is not enough to just have
      * any car available for the length of stay, we need it to be in one
-     * specific car.
+     * specific make of car.
      *
      * @param month	Month of proposed rent
      * @param day	Day of start of proposed rent
@@ -62,12 +60,12 @@ public interface RentACarInterface {
      * @param day	Day of start of proposed rent
      * @param make	Make, what sort of car for the proposed rent
      * @param lengthOfRent	how long is the proposed rent for
-     * @return	the id of a room that fits the bill
+     * @return	the id of a car that fits the bill
      */
     public int getCarAvailable(Month month, int day, Make make, int lengthOfRent);
 
     /**
-     * Book a car for the proposed rent. It should be one car for the full
+     * Book a car for the proposed rental period. It should be one car for the full
      * time. THERE IS NO NEED TO CONSIDER RENTALS THAT ROLL OVER TWO MONTHS
      *
      * @param month	Month of proposed rent

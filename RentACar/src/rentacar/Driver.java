@@ -15,6 +15,7 @@ import ooc.enums.Month;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import ooc.yoursolution.Car;
 
 // INCLUDE HERE THE LINK TO THE GIT REPOSITORY AS A COMMENT!!!!
 
@@ -22,12 +23,6 @@ import java.io.IOException;
 // INCLUDE HERE THE FULL NAME AND STUDENT NUMBER OF BOTH TEAM MEMBERS 
 // AS A COMMENT!!!!
 
-
-
-/**
- *
- * @author apont
- */
 public class Driver {
 
     /**
@@ -36,14 +31,12 @@ public class Driver {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-
-        BookingSystemInterface bookingSystem = new BookingSystem();
-
-        String file = "amilcar_rentals.txt";
-        BufferedReader in = new BufferedReader(new FileReader(file));
-
-        RentACarInterface rentACar = bookingSystem.setupRentACar(in);
-
+      
+         BookingSystemInterface bookingSystem = new BookingSystem();
+         String file = "car_rentals.txt";
+         BufferedReader in = new BufferedReader(new FileReader(file));
+         RentACarInterface rentACar = bookingSystem.setupRentACar(in);
+         
         // Get the name of the car rental
         System.out.println(rentACar.getName());
         
@@ -64,7 +57,7 @@ public class Driver {
         System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
         System.out.println(rentACar.bookCar(Month.FEBRUARY, 3, Make.FIAT, 10));
         System.out.println(rentACar.bookCar(Month.MARCH, 10, Make.FORD, 12));
-        
+      
     }
 
 }

@@ -11,8 +11,6 @@ import java.util.Map;
 
 /**
  * This is one of the interfaces you need to implement
- * 
- * @author apont
  */
 public interface CarInterface {
     
@@ -82,15 +80,15 @@ public interface CarInterface {
      * in a given month
      * 
      * @param month Month being checked
-     * @param day date being checked
+     * @param day day being checked
      * @return  true or false if it is available or not
      */
     public boolean isAvailable(Month month, int day);
     
     /**
-     * Book a room on the given month and day. To book a room its availability 
+     * Book a car on the given month and day. To book a car its availability 
      * is changed to false on the given month and day. 
-     * This should return true or false if this change is successfully made
+     * This should return true or false if this change is successfully made.
      * 
      * @param month month to book
      * @param day date to book
