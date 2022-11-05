@@ -102,7 +102,7 @@ public class Car implements CarInterface{
         
     public void setCount(int count){
     //helper method to set total number of cars
-    //to be used in bookingSystems Bernardo loquita 
+    //to be used in bookingSystems Bernardo
         this.count = count;
     }
 }
