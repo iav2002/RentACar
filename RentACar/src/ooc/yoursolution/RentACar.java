@@ -126,8 +126,13 @@ public class RentACar implements RentACarInterface {
 
     @Override
     public int getNumberOfCars() {
+        int carNum = 0; //counter
         
-        return 0;
+        //adding the count while going through each object in the car list
+        for(CarInterface c : this.cars){
+            carNum += ((Car) c).getCount();
+        }
+        return carNum;
         
     }
     
