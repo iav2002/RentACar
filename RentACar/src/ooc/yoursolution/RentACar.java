@@ -42,7 +42,31 @@ public class RentACar implements RentACarInterface {
 
     @Override
     public boolean checkAvailability(Month month, int day, Make make, int lengthOfRent) {
-        return false;
+        CarInterface car = new Car();
+        for(CarInterface c: this.cars){
+            if(c.getMake() == make){        //checking if it matches the given make
+                car = c;
+                break;
+            }
+        }
+        boolean[] days = car.getAvailability().get(month); //get the availability
+        //this condition is to avoid going beyond the length of array
+        int length;
+        if(day + lengthOfRent <= days.length){
+            length = day + lengthOfRent;
+        }else{
+            length = days.length;
+        }
+        
+        int i; //counter
+        for(i = day; i < length; i++){
+            //in case one day is not available, return false
+            if(days[i] == false){
+                return false;
+            }
+        }
+        
+        return true;
     }
 
     @Override
