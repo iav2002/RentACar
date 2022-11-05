@@ -14,29 +14,30 @@ import ooc.enums.Month;
  * @author ignac
  */
 public class RentACar implements RentACarInterface {
+    //setting name and cars attributes
     private String name;
     private List<CarInterface> cars = new ArrayList<>();
     
     
     @Override
     public List<CarInterface> getCars() {   
-        return cars;
+        return cars;    //cars getter
     }
 
     @Override
     public void setCars(List<CarInterface> cars) {
-        this.cars = cars;
+        this.cars = cars;   //cars setter
     }
 
     @Override
     public String getName() {
-        return this.name;
+        return name;       //name getter
 
     }
 
     @Override
     public void setName(String name) {
-        this.name = name;
+        this.name = name;       //name setter
     }
 
     @Override
