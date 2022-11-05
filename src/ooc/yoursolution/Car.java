@@ -18,54 +18,51 @@ public class Car implements CarInterface{
     
     private Make make;
     private double rate;
-    private int id;
+    private int id; // cars 
+    private int count; //number of cars
     private Map<Month, boolean[]> availability;
     
-
+    public Car(){
+        this.availability = new HashMap<>(); //intialize the HashMap
+        this.createAvailability(); // initialize the availability of the cars
+    }
+   
     @Override
     public Map<Month, boolean[]> createAvailability() {
     
-        HashMap<Month, boolean[]> availability = new HashMap<>(); 
-    
-     for(Month month: Month.values()){
-     boolean[] monthAvailability = new boolean[month.getNumberOfDays()];
-     Arrays.fill(monthAvailability, true);
-     }
-     
-        return availability;
-         
+        this.availability = new HashMap<>(); // new hashmap
+
+        for(Month month: Month.values()){
+            boolean[] days = new boolean[month.getNumberOfDays()]; // create an array equivalent to the number of days
+            Arrays.fill(days, true); // initialize set available in all days
+         this.availability.put(month, days);
+        }
+            return this.availability;        
     }
 
     @Override
-    public Make getMake() {
-        
+    public Make getMake() {       
         return make;
     }
 
     @Override
-    public void setMake(Make make) {
-        
-        this.make = make;
-        
+    public void setMake(Make make) {        
+        this.make = make;      
     }
 
     @Override
     public double getRate() {
         return rate;
-  
     }
 
     @Override
     public void setRate(double rate) {
-        this.rate = rate;
-        
+        this.rate = rate;        
     }
 
     @Override
-    public Map<Month, boolean[]> getAvailability() {
-                
-        
-        return availability;
+    public Map<Month, boolean[]> getAvailability() {                      
+        return this.availability;
     }
 
     @Override
@@ -79,22 +76,33 @@ public class Car implements CarInterface{
     }
 
     @Override
-    public boolean isAvailable(Month month, int day) {
-        boolean[] monthAvailability = availability.get(month);
-        return monthAvailability[day];
-        
+    public boolean isAvailable(Month month, int day) {     
+        return this.availability.get(month)[day];      
     }
 
     @Override
     public boolean book(Month month, int day) {
-        if(isAvailable(month,day)){
+       
+        boolean available = this.isAvailable(month, day); //to check if is booked already
+       //if not, we can book
+        if(available){ 
+            boolean[] days = this.availability.get(month); //get the days array
+            days[day] = false;
+            this.availability.put(month, days);
             return true;
         }
-        
-        boolean[] monthAvailability = availability.get(month);
-        monthAvailability[day] = false;
-        return true;
-      
+        return false; // is already booked
     }
     
+    public int getCount(){ 
+    //helper method to get number of cars
+    //to be used in bookingSystems Bernardo
+    return this.count;
+    }
+        
+    public void setCount(int count){
+    //helper method to set total number of cars
+    //to be used in bookingSystems Bernardo loquita 
+        this.count = count;
+    }
 }
