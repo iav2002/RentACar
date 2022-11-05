@@ -14,14 +14,13 @@ import ooc.enums.Month;
  * @author ignac
  */
 public class RentACar implements RentACarInterface {
+    private String name;
+    private List<CarInterface> cars = new ArrayList<>();
     
-    List<CarInterface> cars;
-
+    
     @Override
-    public List<CarInterface> getCars() {
-        cars = new ArrayList<>();
+    public List<CarInterface> getCars() {   
         return cars;
-        
     }
 
     @Override
@@ -31,17 +30,18 @@ public class RentACar implements RentACarInterface {
 
     @Override
     public String getName() {
+        return this.name;
 
     }
 
     @Override
     public void setName(String name) {
-
+        this.name = name;
     }
 
     @Override
     public boolean checkAvailability(Month month, int day, Make make, int lengthOfRent) {
-
+        return false;
     }
 
     @Override

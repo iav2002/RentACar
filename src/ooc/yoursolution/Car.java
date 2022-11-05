@@ -94,7 +94,7 @@ public class Car implements CarInterface{
         boolean[] monthAvailability = availability.get(month);
         monthAvailability[day] = false;
         return true;
-
+      
     }
     
 }

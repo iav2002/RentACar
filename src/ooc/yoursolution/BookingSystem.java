@@ -15,7 +15,7 @@ public class BookingSystem implements BookingSystemInterface{
 
     @Override
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException {
-    return null;    
+    return null; 
     }
     
 }
