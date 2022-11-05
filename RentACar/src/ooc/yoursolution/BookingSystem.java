@@ -46,8 +46,5 @@ public class BookingSystem implements BookingSystemInterface{
             rentACar.setName(name); //set the name
             
             return rentACar;
-    }
-    
+    }  
 } 
-
-    
