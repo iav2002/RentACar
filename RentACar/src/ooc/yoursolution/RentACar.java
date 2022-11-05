@@ -6,6 +6,7 @@ package ooc.yoursolution;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import ooc.enums.Make;
 import ooc.enums.Month;
 
@@ -84,10 +85,42 @@ public class RentACar implements RentACarInterface {
 
     @Override
     public boolean bookCar(Month month, int day, Make make, int lengthOfRent) {
+        //first, we check if it is available
+        boolean available = this.checkAvailability(month, day, make, lengthOfRent);
+        if(available == true){
+            return true;
+        }
         
+        CarInterface car = new Car();
+        int index = 0; //keeping track of which index car belongs to
+        int i; //counter
+        for (i = 0; i < this.cars.size(); i++){
+            if(this.cars.get(i).getMake() == make){
+                car = this.cars.get(i);
+                index = i;
+                break;
+            }
+        }
         
-        return false;
+        //Map for getting the availability
+        Map<Month, boolean[]> availability = car.getAvailability();
+        boolean[] days = availability.get(month);   //getting the days of the month
         
+        //boundary conditions
+        int length;
+        if (day + lengthOfRent <= days.length){
+            length = day + lengthOfRent;
+        }else{
+            length = days.length;
+        }
+        
+        for(int j = day; j < length; j++){
+            car.book(month, j); //book for each day
+        }
+        
+        this.cars.set(index, car);  //update the cars
+        
+        return true;
         
     }
 
