@@ -71,8 +71,15 @@ public class RentACar implements RentACarInterface {
 
     @Override
     public int getCarAvailable(Month month, int day, Make make, int lengthOfRent) {
-
-        return 0;
+        CarInterface car = new Car();
+        for(CarInterface c: this.cars){
+            if(c.getMake() == make){
+                car = c;
+                break;
+            }
+        }
+        //In case the car is available
+        return car.getId();
     }
 
     @Override
