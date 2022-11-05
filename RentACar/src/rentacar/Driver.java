@@ -17,7 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import ooc.yoursolution.Car;
 
-// INCLUDE HERE THE LINK TO THE GIT REPOSITORY AS A COMMENT!!!!
+// https://github.com/iav2002/RentACar
 
 
 // Bernardo Gandara 2021283
