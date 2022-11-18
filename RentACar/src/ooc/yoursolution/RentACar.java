@@ -87,9 +87,9 @@ public class RentACar implements RentACarInterface {
     public boolean bookCar(Month month, int day, Make make, int lengthOfRent) {
         //first, we check if it is available
         boolean available = this.checkAvailability(month, day, make, lengthOfRent);
-        if(available == true){
+        if(available == true)
             return true;
-        }
+        
         
         CarInterface car = new Car();
         int index = 0; //keeping track of which index car belongs to
